@@ -1,6 +1,6 @@
 {
   "name": "helloboxy",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Hello Boxy",
   "keywords": [
     "hello",
@@ -12,13 +12,15 @@
     "start": "cross-env NODE_ENV=dev supervisor -w server,app.js -e node,js,html app",
     "browsersync": "cross-env NODE_ENV=dev node app_browsersync",
     "build": "webpack",
-    "production": "webpack --config webpack.production.config.js --optimize-minimize & cross-env NODE_ENV='production' node app"
+    "production": "webpack --config webpack.production.config.js --optimize-minimize & cross-env NODE_ENV=production node app"
   },
   "license": "MIT",
   "dependencies": {
     "consolidate": "^0.14.5",
     "ejs": "^2.5.5",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -37,8 +39,6 @@
     "file-loader": "^0.10.0",
     "node-sass": "^4.5.0",
     "npm-install-webpack-plugin": "^4.0.4",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
     "reload": "^1.1.1",
     "resolve-url-loader": "^2.0.0",
     "sass-loader": "^6.0.1",

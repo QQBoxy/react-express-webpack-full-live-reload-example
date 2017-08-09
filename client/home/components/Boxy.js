@@ -21,18 +21,12 @@ class Boxy extends React.Component {
     this.toggleSwitchMode = this.toggleSwitchMode.bind(this);
   }
   toggleSwitchMode(id) {
-    let text =  {
-
-    }
     this.setState({
       showHomepage: !this.state.showHomepage,
       buttonText: (this.state.showHomepage) ? "Hide List" :"Show Favorite"
     });
   }
   componentDidMount() {
-    const {
-      server
-    } = this.props;
     fetch("/api/blog", {
       credentials: "include",
       method: "get",
