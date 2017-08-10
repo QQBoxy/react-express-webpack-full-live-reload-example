@@ -41,8 +41,8 @@ var devConfig = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            filename: './vendor/bundle.js'
+            names: ['vendor'],
+            filename: './[name]/bundle.js'
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()

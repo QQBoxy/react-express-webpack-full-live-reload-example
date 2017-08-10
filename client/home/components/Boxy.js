@@ -27,9 +27,6 @@ class Boxy extends React.Component {
     });
   }
   componentDidMount() {
-    const {
-      server
-    } = this.props;
     fetch("/api/blog", {
       credentials: "include",
       method: "get",

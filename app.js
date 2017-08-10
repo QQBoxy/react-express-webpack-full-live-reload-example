@@ -46,7 +46,7 @@ if(isDev) {
     reload(server, app);
 
     server.listen(port, function(){
-        console.log('App (dev) is now running on port 3000!');
+        console.log('App (dev) is now running on port ' + port + '!');
     });
 } else {
 
@@ -54,6 +54,6 @@ if(isDev) {
     app.use(express.static(path.join(__dirname, 'public')));
     require('./server/routes')(app);
     app.listen(port, function () {
-        console.log('App (production) is now running on port 3000!');
+        console.log('App (production) is now running on port ' + port + '!');
     });
 }

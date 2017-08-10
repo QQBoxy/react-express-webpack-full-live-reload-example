@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -36,6 +37,17 @@ var productionConfig = [{
     },
     plugins: [
         new CleanWebpackPlugin(['public']),
+        new webpack.optimize.CommonsChunkPlugin({
+            names: ['vendor'],
+            filename: './[name]/bundle.js'
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: { warnings: false },
+            comments: false
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production')
+        }),
         new ExtractTextPlugin({
             filename: './[name]/index.css',
             allChunks: true
