@@ -21,9 +21,6 @@ class Boxy extends React.Component {
     this.toggleSwitchMode = this.toggleSwitchMode.bind(this);
   }
   toggleSwitchMode(id) {
-    let text =  {
-
-    }
     this.setState({
       showHomepage: !this.state.showHomepage,
       buttonText: (this.state.showHomepage) ? "Hide List" :"Show Favorite"
@@ -48,6 +45,7 @@ class Boxy extends React.Component {
   }
   renderBoxys() {
     const { blogs } = this.state;
+
     const boxyElements = blogs.map((blog) => (
       /* jshint ignore: start*/
       <li key={blog.id}>

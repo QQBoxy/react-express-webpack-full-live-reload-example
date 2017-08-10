@@ -15,10 +15,11 @@ class BoxyShow extends React.Component {
       title,
       onShow
     } = this.props;
+
     return (
       /* jshint ignore: start*/
       <p
-        onClick={() => {
+        onClick={function () {
           onShow && onShow();
         }}
       >{title}</p>
